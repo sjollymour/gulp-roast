@@ -1,0 +1,296 @@
+/* Enable border-box model for all elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #082B59;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 2;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+/* make images flexible */
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #59331d;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 10px solid #d98555;
+}
+
+/* navbar styling */
+nav{
+  padding: 0.5rem;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: column wrap; /* Stacked vertically on small screens */
+  justify-content: center;
+  align-items: center; /* Centered alignment for mobile */
+}
+
+nav li {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 1.3rem;
+}
+
+/* max width on the image in pixels */
+nav .logo img {
+  max-width: 150px;
+}
+
+/* flex basis on the image container, li */
+nav .logo {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  color: #d98555;
+}
+
+/* establishes a white background */
+.main-bkgd {
+  background: #ffffff url(../media/images/gulp-bottom-beans.jpg) repeat-x bottom;
+  padding-bottom: 300px;
+}
+
+/* sits inside of the white background, centered */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.contact-main{
+  max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+}
+.main-home{
+  max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+}
+
+article {
+  flex-basis: 100%; /* Full width on small screens */
+  padding-right: 1rem;
+}
+
+figure {
+  margin: 3rem 0 0 0;
+  flex-basis: 100%; /* Full width on small screens */
+  border-radius: 10px;
+}
+
+figure img {
+  border-radius: 10px;
+}
+
+article img{
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  display: inline-block;
+  background-color: #59331D;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: #f2f2f2;
+  text-decoration: none;
+  border: 3px solid #59331d;
+}
+
+.button:hover {
+  background-color: #f2f2f2;
+  color: #59331d;
+}
+
+footer {
+  color: #f2f2f2;
+  text-align: center;
+  border-top: 10px solid #d98555;
+  padding: 1rem;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+footer a {
+  color: #f2f2f2;
+  font-size: 1rem;
+  display: block;
+  margin: 0 1rem 3rem 1rem;
+}
+
+
+/* Media Queries */
+
+/* Small Viewport */
+@media screen and (min-width: 320px) {
+  nav li {
+    margin: 0.5rem 1rem; /* Adjust margin for stacked layout */
+  }
+  figure{
+    text-align: center;
+  }
+  .about-img img {
+    content: url(../media/images/gulp-pouring-coffee-horizontal-sm.jpg);
+    max-width: 100%;
+    height: auto;
+  }
+  .products-article{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .indiv-products{
+    margin: 1rem;
+  }
+}
+
+/* Medium Viewport */
+@media screen and (min-width: 768px) {
+  nav ul {
+    flex-flow: row wrap; /* Stacked horizontally on medium screens */
+  }
+
+  nav .logo {
+    flex-basis: 100%; /* Logo occupies full width */
+  }
+
+  nav li {
+    flex-basis: auto; /* Items return to default behavior */
+    margin: 0 1rem; /* Add margin between items */
+  }
+  section{
+    display: flex;
+  }
+  .main article{
+    flex-basis: 70%;
+  }
+  .main figure{
+    flex-basis:30%;
+  }
+  .about-img img {
+    content: url(../media/images/gulp-pouring-coffee-vertical.jpg);
+  }
+  .products-article{
+    max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  }
+
+  .indiv-products{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    grid-gap: 1rem;
+    align-items: center;
+  }
+  
+  .contact-main article{
+    flex-basis: 50%;
+  }
+  .contact-main figure{
+    flex-basis: 50%;
+  }
+  .main-home article{
+    flex-basis: 50%;
+  }
+  .main-home figure{
+    flex-basis: 50%;
+  }
+}
+
+/* Large Viewport */
+@media screen and (min-width: 1200px) {
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+  }
+  nav .logo {
+    flex-basis: auto;
+    margin-right: auto; /* Add this line to push the logo to the left */
+  }
+  nav li {
+    flex-basis: auto;
+  }
+  .main article{
+    flex-basis: 50%;
+  }
+  .main figure{
+    flex-basis:50%;
+  }
+  .about-img img {
+    content: url(../media/images/gulp-pouring-coffee-horizontal.jpg);
+  }
+  
+  .indiv-products{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    align-items: start;
+    grid-gap: 2rem;
+  }
+
+}
